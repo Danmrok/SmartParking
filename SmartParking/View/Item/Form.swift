@@ -43,7 +43,9 @@ struct Form: View {
                 
                 
             Button{
+                
                 self.Transfer = !Transfer
+                
             } label: {
                 
                 Text("Log in")

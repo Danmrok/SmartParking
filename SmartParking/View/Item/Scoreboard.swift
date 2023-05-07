@@ -82,10 +82,10 @@ struct Scoreboard: View {
                             if let dictionary = json as? [String:[String: Any]] {
                                 self.dictionary = dictionary
                                 print(dictionary)
-                                let countOccupied = dictionary.values.reduce(0) { $0 + ($1["status"] as? Int == 0 ? 1 : 0) }
-                                let countAvailable = dictionary.values.reduce(0) { $0 + ($1["status"] as? Int == 0 ? 1 : 0) }
-                                self.SumOccupied = countOccupied
+                                let countOccupied = dictionary.values.reduce(0) { $0 + ($1["status"] as? Int == 0 ? 0 : 1) }
+                                let countAvailable = dictionary.values.reduce(0) { $0 + ($1["status"] as? Int == 1 ? 1 : 0) }
                                 self.SumAvailable = total - countAvailable
+                                self.SumOccupied = countOccupied
 //                                let totalStatus = dictionary.values.reduce(0) { sum, value in
 //                                    let status = value["status"] as? Int ?? 0
 //                                    return sum + status

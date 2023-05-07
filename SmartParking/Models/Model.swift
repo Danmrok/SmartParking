@@ -14,16 +14,6 @@ struct Option: Hashable {
     let ImageName: String
 }
 
-struct Person: Identifiable {
-    let customerName: String
-    let PhoneNumber: String
-    let marknumber: String
-    let markcar: String
-    let datein: String
-    let dateout: String
-    let id = UUID()
-}
-
 
 struct Questions: Identifiable {
     let id = UUID()
@@ -31,10 +21,37 @@ struct Questions: Identifiable {
     let answer: String
 }
 
+func fetchDataFromURL(completion: @escaping ([String: [String: Any]]?, Error?) -> Void) {
+    if let url = URL(string: "http://143.47.189.24:8000/data") {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            
+            if let error = error {
+                completion(nil, error)
+                return
+            }
 
+            guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
+                completion(nil, NSError(domain: "Invalid response", code: 0, userInfo: nil))
+                return
+            }
 
-
-
+            if let data = data {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    if let dictionary = json as? [String:[String: Any]] {
+                        completion(dictionary, nil)
+                    } else {
+                        completion(nil, NSError(domain: "Unable to parse JSON", code: 0, userInfo: nil))
+                    }
+                } catch {
+                    completion(nil, error)
+                }
+            }
+        }.resume()
+    } else {
+        completion(nil, NSError(domain: "Invalid URL", code: 0, userInfo: nil))
+    }
+}
 
 struct CustomDisclosureGroup<Prompt: View, ExpandedView: View>: View {
     

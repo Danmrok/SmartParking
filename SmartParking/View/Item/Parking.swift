@@ -25,7 +25,7 @@ struct Parking: View {
           
             VStack(spacing: 0){
                 
-                HStack(spacing: 45){
+                HStack(spacing: 43){
                     ForEach(Saver.prefix(5), id: \.self){kite in
                         Text(kite)
                             .font(.custom("Rubik-Bold", size: 18))
@@ -39,7 +39,7 @@ struct Parking: View {
                         .resizable()
                         .frame(width: 1, height: 120)
                         .background(Color.white)
-                    ForEach(dictionary.sorted(by: { $0.key < $1.key }), id: \.key) { key, value in
+                    ForEach(dictionary.sorted(by: { $0.key < $1.key }).prefix(5), id: \.key) { key, value in
                         Image(value["status"] as? Int == 0 ? "WhiteCar" : "RedCar")
                             .resizable()
                             .frame(width: 58, height: 115)
@@ -51,17 +51,17 @@ struct Parking: View {
                             .background(Color.white)
                        
                     }
-                    ForEach(0..<3, id: \.self){_ in
-                        Image("WhiteCar")
-                            .resizable()
-                            .frame(width: 58, height: 115)
-                            .rotationEffect(Angle(degrees: 180))
-                            .padding(.bottom, 10)
-                        Image("Line3")
-                            .resizable()
-                            .frame(width: 1, height: 120)
-                            .background(Color.white)
-                    }
+//                    ForEach(0..<3, id: \.self){_ in
+//                        Image("WhiteCar")
+//                            .resizable()
+//                            .frame(width: 58, height: 115)
+//                            .rotationEffect(Angle(degrees: 180))
+//                            .padding(.bottom, 10)
+//                        Image("Line3")
+//                            .resizable()
+//                            .frame(width: 1, height: 120)
+//                            .background(Color.white)
+//                    }
                 }
                 
                 VStack {
@@ -78,12 +78,11 @@ struct Parking: View {
                         .frame(width: 1, height: 120)
                         .background(Color.white)
                     
-                    ForEach(0..<5, id: \.self){_ in
-                        Image("WhiteCar")
+                    ForEach(dictionary.sorted(by: { $0.key < $1.key }).prefix(10).dropFirst(5), id: \.key) { key, value in
+                        Image(value["status"] as? Int == 0 ? "WhiteCar" : "RedCar")
                             .resizable()
                             .frame(width: 58, height: 115)
                             .padding(.top, 10)
-                           
                         Image("Line3")
                             .resizable()
                             .frame(width: 1, height: 120)
@@ -91,7 +90,7 @@ struct Parking: View {
                     }
                 }
              
-                HStack(spacing: 45){
+                HStack(spacing: 43){
                     ForEach(Saver.prefix(10).suffix(5), id: \.self){kite in
                         Text(kite)
                             .font(.custom("Rubik-Bold", size: 18))
@@ -116,6 +115,7 @@ struct Parking: View {
                         .resizable()
                         .frame(width: 1, height: 120)
                         .background(Color.white)
+                    
                     ForEach(0..<5, id: \.self){_ in
                         Image("WhiteCar")
                             .resizable()
@@ -167,33 +167,13 @@ struct Parking: View {
             
         }
         .onAppear{
-            if let url = URL(string: "http://143.47.189.24:8000/data") {
-                URLSession.shared.dataTask(with: url) { data, response, error in
-                    if let error = error {
-                        print("Error: \(error)")
-                        return
-                    }
-    
-                    guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
-                        print("Invalid response")
-                        return
-                    }
-    
-                    if let data = data {
-                        do {
-                            let json = try JSONSerialization.jsonObject(with: data, options: [])
-                            if let dictionary = json as? [String:[String: Any]] {
-                                self.dictionary = dictionary
-                                print(dictionary)
-                                if let thirdValue = dictionary.values.dropFirst(2).first, let name = thirdValue["status"] as? Int {
-                                    print(name)
-                                }
-                            }
-                        } catch {
-                            print("Error: \(error)")
-                        }
-                    }
-                }.resume()
+            
+            fetchDataFromURL{dictionary, error in
+                if let dictionary = dictionary {
+                    self.dictionary = dictionary
+                } else {
+                    print("Error: \(error)")
+                }
             }
         }
         .frame(minWidth: 824,maxWidth: .infinity, minHeight: 330)

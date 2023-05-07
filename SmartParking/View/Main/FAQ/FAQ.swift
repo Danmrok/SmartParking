@@ -41,7 +41,7 @@ struct FAQ: View {
                             } prompt: {
                                 HStack(spacing: 0) {
                                     
-                                    Text("Questions")
+                                    Text("Що на головній?")
                                         .font(.custom("Rubik-Medium", size: 36))
                                         .foregroundColor(Color("White"))
                                     Spacer()
@@ -51,7 +51,7 @@ struct FAQ: View {
                                 }.frame(width: 470)
                             } expandedView: {
                                 
-                                Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s")
+                                Text("На даній сторінці знаходиться інформація про вільні та зайняті місця парковки. Червоними позначено зайняті місця, а білими - вільні.")
                                     .font(.custom("Rubik-Medium", size: 18))
                                     .frame(width: 470)
                                     .foregroundColor(Color("White"))
@@ -77,7 +77,7 @@ struct FAQ: View {
       
                             } prompt: {
                                 HStack(spacing: 0) {
-                                    Text("Questions")
+                                    Text("Призначення журналу")
                                         .font(.custom("Rubik-Medium", size: 36))
                                         .foregroundColor(Color("White"))
                                     Spacer()
@@ -87,7 +87,7 @@ struct FAQ: View {
                                 }.frame(width: 470)
                             } expandedView: {
                                 
-                                Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s")
+                                Text("Призначення сторінки Журнал полягає в збереженні та організації інформації про в'їзд та виїзд автомобілів на територію, що включає в себе ПІБ водіїв, номери телефонів та автомобілів, а також дати їх в'їзду та виїзду.")
                                     .font(.custom("Rubik-Medium", size: 18))
                                     .frame(width: 470)
                                     .foregroundColor(Color("White"))
@@ -119,7 +119,7 @@ struct FAQ: View {
 
                             } prompt: {
                                 HStack(spacing: 0) {
-                                    Text("Questions")
+                                    Text("Що в FAQ?")
                                         .font(.custom("Rubik-Medium", size: 36))
                                         .foregroundColor(Color("White"))
                                     Spacer()
@@ -129,7 +129,7 @@ struct FAQ: View {
                                 }.frame(width: 470)
                             } expandedView: {
                                 
-                                Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s")
+                                Text("Тут зібрані найчастіші запитання та відповіді на них про використання CRM системи. Якщо у вас є питання, яких немає у списку, зверніться до нашої служби підтримки.")
                                     .font(.custom("Rubik-Medium", size: 18))
                                     .frame(width: 470)
                                     .foregroundColor(Color("White"))
@@ -154,7 +154,7 @@ struct FAQ: View {
 
                             } prompt: {
                                 HStack(spacing: 0) {
-                                    Text("Questions")
+                                    Text("Для чого дана CRM?")
                                         .font(.custom("Rubik-Medium", size: 36))
                                         .foregroundColor(Color("White"))
                                     Spacer()
@@ -164,7 +164,7 @@ struct FAQ: View {
                                 }.frame(width: 470)
                             } expandedView: {
                                 
-                                Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s")
+                                Text("Дана СRM використовується для зручного ведення обліку відвідувань автомобілів та планування роботи з ними.")
                                     .font(.custom("Rubik-Medium", size: 18))
                                     .frame(width: 470)
                                     .foregroundColor(Color("White"))

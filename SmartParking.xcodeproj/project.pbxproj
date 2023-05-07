@@ -21,10 +21,11 @@
 		F6C049B52991457E00692FEF /* Form.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C049B42991457E00692FEF /* Form.swift */; };
 		F6C049B729914F3A00692FEF /* Booking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C049B629914F3A00692FEF /* Booking.swift */; };
 		F6C049B9299159C900692FEF /* FAQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C049B8299159C900692FEF /* FAQ.swift */; };
-		F6C049BB29915A1100692FEF /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C049BA29915A1100692FEF /* Settings.swift */; };
 		F6C049BD299162B500692FEF /* Scoreboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C049BC299162B500692FEF /* Scoreboard.swift */; };
 		F6C049BF2991A64B00692FEF /* Parking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C049BE2991A64B00692FEF /* Parking.swift */; };
 		F6C3E94029E71AFB0016B526 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F6C3E93F29E71AFB0016B526 /* Alamofire */; };
+		F6C5D43B2A059862005CCD99 /* Controllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C5D43A2A059862005CCD99 /* Controllers.swift */; };
+		F6C5D43D2A059C40005CCD99 /* BookingHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C5D43C2A059C40005CCD99 /* BookingHeader.swift */; };
 		F6E64D7B2990161200579BD6 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E64D7A2990161200579BD6 /* Login.swift */; };
 		F6E64D8D29901F6800579BD6 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E64D8C29901F6800579BD6 /* Logo.swift */; };
 		F6E64D8F2990719900579BD6 /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6E64D7F29901B8700579BD6 /* Rubik-Black.ttf */; };
@@ -42,7 +43,6 @@
 		F6E64D9B299071ED00579BD6 /* Rubik-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6E64D8729901B8800579BD6 /* Rubik-SemiBold.ttf */; };
 		F6E64D9C299071EF00579BD6 /* Rubik-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F6E64D7D29901B8700579BD6 /* Rubik-SemiBoldItalic.ttf */; };
 		F6E64D9F2990801700579BD6 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E64D9E2990801700579BD6 /* Dashboard.swift */; };
-		F6F498D92994131300EB34A6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F6F498DB2994131300EB34A6 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,9 +81,10 @@
 		F6C049B42991457E00692FEF /* Form.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Form.swift; sourceTree = "<group>"; };
 		F6C049B629914F3A00692FEF /* Booking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booking.swift; sourceTree = "<group>"; };
 		F6C049B8299159C900692FEF /* FAQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQ.swift; sourceTree = "<group>"; };
-		F6C049BA29915A1100692FEF /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		F6C049BC299162B500692FEF /* Scoreboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scoreboard.swift; sourceTree = "<group>"; };
 		F6C049BE2991A64B00692FEF /* Parking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parking.swift; sourceTree = "<group>"; };
+		F6C5D43A2A059862005CCD99 /* Controllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controllers.swift; sourceTree = "<group>"; };
+		F6C5D43C2A059C40005CCD99 /* BookingHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingHeader.swift; sourceTree = "<group>"; };
 		F6E64D7A2990161200579BD6 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		F6E64D7D29901B8700579BD6 /* Rubik-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		F6E64D7E29901B8700579BD6 /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -102,9 +103,6 @@
 		F6E64D8B29901CE900579BD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F6E64D8C29901F6800579BD6 /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
 		F6E64D9E2990801700579BD6 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
-		F6F498DA2994131300EB34A6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		F6F498DC2994133C00EB34A6 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
-		F6F498DD2994134400EB34A6 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,16 +155,15 @@
 			isa = PBXGroup;
 			children = (
 				F6E64D8B29901CE900579BD6 /* Info.plist */,
-				F6E64D8E29901F7100579BD6 /* Item */,
 				F6E64D7C29901AE100579BD6 /* Fonts */,
-				F6E64D79299015EA00579BD6 /* Authenticator */,
-				F6E64D9D2990771400579BD6 /* Main */,
+				F6C5D4382A059799005CCD99 /* Controller */,
+				F6C5D4372A05970D005CCD99 /* Models */,
+				F6C5D4392A0597A4005CCD99 /* View */,
 				F67B61EF29803B0200EB6943 /* SmartParkingApp.swift */,
 				F67B61F129803B0200EB6943 /* ContentView.swift */,
 				F67B61F329803B0300EB6943 /* Assets.xcassets */,
 				F67B61F829803B0300EB6943 /* SmartParking.entitlements */,
 				F67B61F529803B0300EB6943 /* Preview Content */,
-				F6F498DB2994131300EB34A6 /* Localizable.strings */,
 			);
 			path = SmartParking;
 			sourceTree = "<group>";
@@ -220,12 +217,30 @@
 			path = FAQ;
 			sourceTree = "<group>";
 		};
-		F6C049AD2991203200692FEF /* Settings */ = {
+		F6C5D4372A05970D005CCD99 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F6C049BA29915A1100692FEF /* Settings.swift */,
+				F6C049B02991283F00692FEF /* Model.swift */,
 			);
-			path = Settings;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F6C5D4382A059799005CCD99 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F6C5D43A2A059862005CCD99 /* Controllers.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F6C5D4392A0597A4005CCD99 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F6E64D8E29901F7100579BD6 /* Item */,
+				F6E64D79299015EA00579BD6 /* Authenticator */,
+				F6E64D9D2990771400579BD6 /* Main */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		F6E64D79299015EA00579BD6 /* Authenticator */ = {
@@ -260,13 +275,13 @@
 		F6E64D8E29901F7100579BD6 /* Item */ = {
 			isa = PBXGroup;
 			children = (
-				F6C049B02991283F00692FEF /* Model.swift */,
 				F6E64D8C29901F6800579BD6 /* Logo.swift */,
 				F6C049A629911E5600692FEF /* Header.swift */,
 				F6C049A829911F3300692FEF /* SideBar.swift */,
 				F6C049B42991457E00692FEF /* Form.swift */,
 				F6C049BC299162B500692FEF /* Scoreboard.swift */,
 				F6C049BE2991A64B00692FEF /* Parking.swift */,
+				F6C5D43C2A059C40005CCD99 /* BookingHeader.swift */,
 			);
 			path = Item;
 			sourceTree = "<group>";
@@ -277,7 +292,6 @@
 				F6C049AA2991201A00692FEF /* Dashboard */,
 				F6C049AB2991202200692FEF /* Booking */,
 				F6C049AC2991202B00692FEF /* FAQ */,
-				F6C049AD2991203200692FEF /* Settings */,
 				F6C049AE2991254600692FEF /* Main.swift */,
 			);
 			path = Main;
@@ -395,7 +409,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6F498D92994131300EB34A6 /* Localizable.strings in Resources */,
 				F6E64D91299071A300579BD6 /* Rubik-BlackItalic.ttf in Resources */,
 				F6E64D92299071A700579BD6 /* Rubik-Bold.ttf in Resources */,
 				F6E64D8F2990719900579BD6 /* Rubik-Black.ttf in Resources */,
@@ -436,9 +449,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6C5D43D2A059C40005CCD99 /* BookingHeader.swift in Sources */,
 				F6C049B12991283F00692FEF /* Model.swift in Sources */,
+				F6C5D43B2A059862005CCD99 /* Controllers.swift in Sources */,
 				F6C049B729914F3A00692FEF /* Booking.swift in Sources */,
-				F6C049BB29915A1100692FEF /* Settings.swift in Sources */,
 				F6E64D7B2990161200579BD6 /* Login.swift in Sources */,
 				F67B61F229803B0200EB6943 /* ContentView.swift in Sources */,
 				F6C049AF2991254600692FEF /* Main.swift in Sources */,
@@ -485,19 +499,6 @@
 			targetProxy = F67B620829803B0400EB6943 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		F6F498DB2994131300EB34A6 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F6F498DA2994131300EB34A6 /* en */,
-				F6F498DC2994133C00EB34A6 /* pl */,
-				F6F498DD2994134400EB34A6 /* uk */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F67B620F29803B0400EB6943 /* Debug */ = {

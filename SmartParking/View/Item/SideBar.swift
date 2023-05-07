@@ -22,8 +22,6 @@ struct SideBar: View {
         Option(id: 0, title: "Dashboard", ImageName: "Dashboard"),
         Option(id: 1, title: "Booking", ImageName: "Booking"),
         Option(id: 2, title: "FAQ", ImageName: "FAQ"),
-       
-       
     ]
     
     
@@ -34,7 +32,6 @@ struct SideBar: View {
                 ForEach(options, id: \.self) { option in
                     Button(action: {
                         self.selection = option.id
-                        
                     }, label: {
                         HStack(spacing: 19) {
                             Image("\(option.ImageName)")
