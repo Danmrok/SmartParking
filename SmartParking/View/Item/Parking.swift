@@ -172,7 +172,7 @@ struct Parking: View {
                 if let dictionary = dictionary {
                     self.dictionary = dictionary
                 } else {
-                    print("Error: \(error)")
+                    print("Error: \(String(describing: error))")
                 }
             }
         }

@@ -8,7 +8,14 @@
 import Foundation
 import SwiftUI
 
-struct Option: Hashable {
+
+struct Loginization: Codable {
+    var phonenumber: String = ""
+    var password: String = ""
+}
+
+
+struct Option: Codable, Hashable {
     let id: Int
     let title: String
     let ImageName: String
@@ -29,12 +36,12 @@ func fetchDataFromURL(completion: @escaping ([String: [String: Any]]?, Error?) -
                 completion(nil, error)
                 return
             }
-
+            
             guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
                 completion(nil, NSError(domain: "Invalid response", code: 0, userInfo: nil))
                 return
             }
-
+            
             if let data = data {
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: [])
@@ -53,10 +60,12 @@ func fetchDataFromURL(completion: @escaping ([String: [String: Any]]?, Error?) -
     }
 }
 
+
+
 struct CustomDisclosureGroup<Prompt: View, ExpandedView: View>: View {
     
     @Binding var isExpanded: Bool
-
+    
     var actionOnClick: () -> ()
     var animation: Animation?
     
@@ -69,7 +78,7 @@ struct CustomDisclosureGroup<Prompt: View, ExpandedView: View>: View {
         self.animation = animation
         self.prompt = prompt()
         self.expandedView = expandedView()
-}
+    }
     
     var body: some View {
         VStack(spacing: 0) {

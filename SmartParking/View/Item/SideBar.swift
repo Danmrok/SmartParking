@@ -41,7 +41,7 @@ struct SideBar: View {
                             Text(option.title)
                                 .font(.custom("Rubik-Regular", size: 18))
                                 .foregroundColor(selection == option.id ? Color("White") : Color("Green"))
-                               
+                            
                                 .frame(maxWidth: .infinity, alignment: .leading)
                         }.frame(maxHeight: 120)
                             .padding(.leading, 20)
@@ -50,8 +50,8 @@ struct SideBar: View {
                                             nil
                             )
                     })
-                        .buttonStyle(.plain)
-                        
+                    .buttonStyle(.plain)
+                    
                 }
                 
             }
@@ -70,7 +70,7 @@ struct SideBar: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }).buttonStyle(.plain)
-            .frame(maxHeight: 120)
+                .frame(maxHeight: 120)
                 .padding(.leading, 20)
             
             

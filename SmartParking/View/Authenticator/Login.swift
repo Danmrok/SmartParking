@@ -26,7 +26,7 @@ struct Login: View {
                         .font(.custom("Rubik-Regular", size: 48))
                         .foregroundColor(Color("Green"))
                     
-                    Form(Transfer: $Transfer)
+                     Form(Transfer: $Transfer)
 
                 }
             Spacer(minLength: 60)

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F63AC5652A20FB0E003A57AB /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63AC5642A20FB0E003A57AB /* Regex.swift */; };
+		F63AC5682A20FB8D003A57AB /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63AC5672A20FB8D003A57AB /* String.swift */; };
 		F67B61F029803B0200EB6943 /* SmartParkingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67B61EF29803B0200EB6943 /* SmartParkingApp.swift */; };
 		F67B61F229803B0200EB6943 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67B61F129803B0200EB6943 /* ContentView.swift */; };
 		F67B61F429803B0300EB6943 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F67B61F329803B0300EB6943 /* Assets.xcassets */; };
@@ -23,8 +25,7 @@
 		F6C049B9299159C900692FEF /* FAQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C049B8299159C900692FEF /* FAQ.swift */; };
 		F6C049BD299162B500692FEF /* Scoreboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C049BC299162B500692FEF /* Scoreboard.swift */; };
 		F6C049BF2991A64B00692FEF /* Parking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C049BE2991A64B00692FEF /* Parking.swift */; };
-		F6C3E94029E71AFB0016B526 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F6C3E93F29E71AFB0016B526 /* Alamofire */; };
-		F6C5D43B2A059862005CCD99 /* Controllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C5D43A2A059862005CCD99 /* Controllers.swift */; };
+		F6C5D43B2A059862005CCD99 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C5D43A2A059862005CCD99 /* ViewModel.swift */; };
 		F6C5D43D2A059C40005CCD99 /* BookingHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C5D43C2A059C40005CCD99 /* BookingHeader.swift */; };
 		F6E64D7B2990161200579BD6 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E64D7A2990161200579BD6 /* Login.swift */; };
 		F6E64D8D29901F6800579BD6 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E64D8C29901F6800579BD6 /* Logo.swift */; };
@@ -63,6 +64,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F63AC5642A20FB0E003A57AB /* Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
+		F63AC5672A20FB8D003A57AB /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F67B61EC29803B0200EB6943 /* SmartParking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartParking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F67B61EF29803B0200EB6943 /* SmartParkingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartParkingApp.swift; sourceTree = "<group>"; };
 		F67B61F129803B0200EB6943 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,7 +86,7 @@
 		F6C049B8299159C900692FEF /* FAQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQ.swift; sourceTree = "<group>"; };
 		F6C049BC299162B500692FEF /* Scoreboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scoreboard.swift; sourceTree = "<group>"; };
 		F6C049BE2991A64B00692FEF /* Parking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parking.swift; sourceTree = "<group>"; };
-		F6C5D43A2A059862005CCD99 /* Controllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controllers.swift; sourceTree = "<group>"; };
+		F6C5D43A2A059862005CCD99 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		F6C5D43C2A059C40005CCD99 /* BookingHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingHeader.swift; sourceTree = "<group>"; };
 		F6E64D7A2990161200579BD6 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		F6E64D7D29901B8700579BD6 /* Rubik-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
@@ -110,7 +113,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6C3E94029E71AFB0016B526 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +133,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F63AC5632A20FAFC003A57AB /* enum */ = {
+			isa = PBXGroup;
+			children = (
+				F63AC5642A20FB0E003A57AB /* Regex.swift */,
+			);
+			path = enum;
+			sourceTree = "<group>";
+		};
+		F63AC5662A20FB7B003A57AB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F63AC5672A20FB8D003A57AB /* String.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		F67B61E329803B0200EB6943 = {
 			isa = PBXGroup;
 			children = (
@@ -156,7 +174,7 @@
 			children = (
 				F6E64D8B29901CE900579BD6 /* Info.plist */,
 				F6E64D7C29901AE100579BD6 /* Fonts */,
-				F6C5D4382A059799005CCD99 /* Controller */,
+				F6C5D4382A059799005CCD99 /* ViewModel */,
 				F6C5D4372A05970D005CCD99 /* Models */,
 				F6C5D4392A0597A4005CCD99 /* View */,
 				F67B61EF29803B0200EB6943 /* SmartParkingApp.swift */,
@@ -225,12 +243,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		F6C5D4382A059799005CCD99 /* Controller */ = {
+		F6C5D4382A059799005CCD99 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				F6C5D43A2A059862005CCD99 /* Controllers.swift */,
+				F63AC5662A20FB7B003A57AB /* Extension */,
+				F63AC5632A20FAFC003A57AB /* enum */,
+				F6C5D43A2A059862005CCD99 /* ViewModel.swift */,
 			);
-			path = Controller;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		F6C5D4392A0597A4005CCD99 /* View */ = {
@@ -314,7 +334,6 @@
 			);
 			name = SmartParking;
 			packageProductDependencies = (
-				F6C3E93F29E71AFB0016B526 /* Alamofire */,
 			);
 			productName = SmartParking;
 			productReference = F67B61EC29803B0200EB6943 /* SmartParking.app */;
@@ -391,7 +410,6 @@
 			);
 			mainGroup = F67B61E329803B0200EB6943;
 			packageReferences = (
-				F6C3E93E29E71AFB0016B526 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = F67B61ED29803B0200EB6943 /* Products */;
 			projectDirPath = "";
@@ -449,11 +467,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F63AC5682A20FB8D003A57AB /* String.swift in Sources */,
 				F6C5D43D2A059C40005CCD99 /* BookingHeader.swift in Sources */,
 				F6C049B12991283F00692FEF /* Model.swift in Sources */,
-				F6C5D43B2A059862005CCD99 /* Controllers.swift in Sources */,
+				F6C5D43B2A059862005CCD99 /* ViewModel.swift in Sources */,
 				F6C049B729914F3A00692FEF /* Booking.swift in Sources */,
 				F6E64D7B2990161200579BD6 /* Login.swift in Sources */,
+				F63AC5652A20FB0E003A57AB /* Regex.swift in Sources */,
 				F67B61F229803B0200EB6943 /* ContentView.swift in Sources */,
 				F6C049AF2991254600692FEF /* Main.swift in Sources */,
 				F6C049A929911F3300692FEF /* SideBar.swift in Sources */,
@@ -788,25 +808,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		F6C3E93E29E71AFB0016B526 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		F6C3E93F29E71AFB0016B526 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F6C3E93E29E71AFB0016B526 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F67B61E429803B0200EB6943 /* Project object */;
 }
