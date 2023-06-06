@@ -9,12 +9,7 @@ import Foundation
 import SwiftUI
 
 
-struct Loginization: Codable {
-    var phonenumber: String = ""
-    var password: String = ""
-}
-
-
+// Модель, котра буде використовуватись для динамічного виведення бокового меню
 struct Option: Codable, Hashable {
     let id: Int
     let title: String
@@ -22,46 +17,7 @@ struct Option: Codable, Hashable {
 }
 
 
-struct Questions: Identifiable {
-    let id = UUID()
-    let quess: String
-    let answer: String
-}
-
-func fetchDataFromURL(completion: @escaping ([String: [String: Any]]?, Error?) -> Void) {
-    if let url = URL(string: "http://143.47.189.24:8000/data") {
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            
-            if let error = error {
-                completion(nil, error)
-                return
-            }
-            
-            guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
-                completion(nil, NSError(domain: "Invalid response", code: 0, userInfo: nil))
-                return
-            }
-            
-            if let data = data {
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    if let dictionary = json as? [String:[String: Any]] {
-                        completion(dictionary, nil)
-                    } else {
-                        completion(nil, NSError(domain: "Unable to parse JSON", code: 0, userInfo: nil))
-                    }
-                } catch {
-                    completion(nil, error)
-                }
-            }
-        }.resume()
-    } else {
-        completion(nil, NSError(domain: "Invalid URL", code: 0, userInfo: nil))
-    }
-}
-
-
-
+// Модель, за допомогою якої буде створений висувний список, котрий містить питання та відповідь
 struct CustomDisclosureGroup<Prompt: View, ExpandedView: View>: View {
     
     @Binding var isExpanded: Bool
@@ -97,3 +53,5 @@ struct CustomDisclosureGroup<Prompt: View, ExpandedView: View>: View {
         }
     }
 }
+
+

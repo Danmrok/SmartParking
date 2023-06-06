@@ -5,43 +5,45 @@
 //  Created by Denys Striltsov on 06.02.2023.
 //
 
-import Foundation
+
 import SwiftUI
 
 struct Scoreboard: View {
     
-    @State var dictionary: [String: [String: Any]] = [:]
-    @State var total = 20
-    @State var SumOccupied = 0
-    @State var SumAvailable = 0
-
-    var body: some View {
+    @EnvironmentObject var dataModel: ViewModel // Отримання даних з об'єкта не маючи доступу надати зміни в даний об'єкт
     
+    @State var total = 20 // Статична змінна
+
+    
+    var body: some View {
+        
+       let SumOccupied = dataModel.dictionary.values.reduce(0) { $0 + ($1["status"] as? Int == 0 ? 0 : 1) } // Дана змінна підраховує кількість зайнятих місць
+       let SumAvailable = total - dataModel.dictionary.values.reduce(0) { $0 + ($1["status"] as? Int == 0 ? 0 : 1) }  // Дана змінна підраховує кількість вільних місць
+        
         HStack(spacing: 20){
             VStack(spacing: 20) {
                 Text("\(total)")
-                    .font(.custom("Rubik-Bold", size: 40))
-                    .foregroundColor(Color("White"))
+                    .font(.custom("Rubik-Bold", size: 40)) // Надає можливість змінити шрифт на інший
+                    .foregroundColor(Color("White")) // Змінює колір тексту
                 Text("Total")
-                    .font(.custom("Rubik-Bold", size: 40))
-                    .foregroundColor(Color("White"))
+                    .font(.custom("Rubik-Bold", size: 40)) // Надає можливість змінити шрифт на інший
+                    .foregroundColor(Color("White")) // Змінює колір тексту
             }.frame(maxWidth: 380, maxHeight: 200)
                 .background(
                     LinearGradient(gradient: Gradient(colors: [Color("BlueOpacity"), Color("SemiDarkBlue")]), startPoint: .bottom, endPoint: .top)
-                )
-                .cornerRadius(8)
+                ) // Надає можливість зробити лінійний градієнт
+                .cornerRadius(8) // Робить заокруглення фрейму
                 
             
             VStack(spacing: 20) {
         
-                    Text("\(SumOccupied)")
-                        .foregroundColor(Color("White"))
-                        .font(.custom("Rubik-Bold", size: 40))
-                
+                Text("\(SumOccupied)")
+                        .foregroundColor(Color("White")) // Змінює колір тексту
+                        .font(.custom("Rubik-Bold", size: 40)) // Надає можливість змінити шрифт на інший
                
                 Text("Occupied")
-                    .font(.custom("Rubik-Bold", size: 40))
-                    .foregroundColor(Color("Red"))
+                    .font(.custom("Rubik-Bold", size: 40)) // Змінює колір тексту
+                    .foregroundColor(Color("Red")) // Надає можливість змінити шрифт на інший
             }.frame(maxWidth: 380, maxHeight: 200)
                 
                 .background(
@@ -64,41 +66,11 @@ struct Scoreboard: View {
             
         }
         .onAppear{
-            if let url = URL(string: "http://143.47.189.24:8000/data") {
-                URLSession.shared.dataTask(with: url) { data, response, error in
-                    if let error = error {
-                        print("Error: \(error)")
-                        return
-                    }
-    
-                    guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
-                        print("Invalid response")
-                        return
-                    }
-    
-                    if let data = data {
-                        do {
-                            let json = try JSONSerialization.jsonObject(with: data, options: [])
-                            if let dictionary = json as? [String:[String: Any]] {
-                                self.dictionary = dictionary
-                                print(dictionary)
-                                let countOccupied = dictionary.values.reduce(0) { $0 + ($1["status"] as? Int == 0 ? 0 : 1) }
-                                let countAvailable = dictionary.values.reduce(0) { $0 + ($1["status"] as? Int == 1 ? 1 : 0) }
-                                self.SumAvailable = total - countAvailable
-                                self.SumOccupied = countOccupied
-//                                let totalStatus = dictionary.values.reduce(0) { sum, value in
-//                                    let status = value["status"] as? Int ?? 0
-//                                    return sum + status
-//                                }
-                            }
-                        } catch {
-                            print("Error: \(error)")
-                        }
-                    }
-                }.resume()
-            }
+            
+            dataModel.fetchData() // Дана команда викликає запит на отримання інформації з серверу
+
         }
-        .padding(.horizontal, 20)
+        .padding(.horizontal, 20) // Відступ по горизонталі з 2 сторін на 20 пікселів
     }
 }
 

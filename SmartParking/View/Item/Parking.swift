@@ -5,20 +5,21 @@
 //  Created by Denys Striltsov on 06.02.2023.
 //
 
-import Foundation
 import SwiftUI
 
 
 @available(macOS 12.0, *)
 struct Parking: View {
     
-    @State var dictionary: [String: [String: Any]] = [:]
+   
+    
     var Saver = ["A01", "A02", "A03", "A04", "A05", "A06",
                  "A07", "A08", "A09", "A10", "A11", "A12",
                  "A13", "A14", "A15", "A16", "A17", "A18",
                  "A19", "A20"
     ]
     
+    @EnvironmentObject var dataModel: ViewModel
     
     var body: some View {
         HStack(spacing: 250) {
@@ -39,7 +40,7 @@ struct Parking: View {
                         .resizable()
                         .frame(width: 1, height: 120)
                         .background(Color.white)
-                    ForEach(dictionary.sorted(by: { $0.key < $1.key }).prefix(5), id: \.key) { key, value in
+                    ForEach(dataModel.dictionary.sorted(by: { $0.key < $1.key }).prefix(5), id: \.key) { key, value in
                         Image(value["status"] as? Int == 0 ? "WhiteCar" : "RedCar")
                             .resizable()
                             .frame(width: 58, height: 115)
@@ -51,17 +52,6 @@ struct Parking: View {
                             .background(Color.white)
                        
                     }
-//                    ForEach(0..<3, id: \.self){_ in
-//                        Image("WhiteCar")
-//                            .resizable()
-//                            .frame(width: 58, height: 115)
-//                            .rotationEffect(Angle(degrees: 180))
-//                            .padding(.bottom, 10)
-//                        Image("Line3")
-//                            .resizable()
-//                            .frame(width: 1, height: 120)
-//                            .background(Color.white)
-//                    }
                 }
                 
                 VStack {
@@ -78,7 +68,7 @@ struct Parking: View {
                         .frame(width: 1, height: 120)
                         .background(Color.white)
                     
-                    ForEach(dictionary.sorted(by: { $0.key < $1.key }).prefix(10).dropFirst(5), id: \.key) { key, value in
+                    ForEach(dataModel.dictionary.sorted(by: { $0.key < $1.key }).prefix(10).dropFirst(5), id: \.key) { key, value in
                         Image(value["status"] as? Int == 0 ? "WhiteCar" : "RedCar")
                             .resizable()
                             .frame(width: 58, height: 115)
@@ -168,13 +158,7 @@ struct Parking: View {
         }
         .onAppear{
             
-            fetchDataFromURL{dictionary, error in
-                if let dictionary = dictionary {
-                    self.dictionary = dictionary
-                } else {
-                    print("Error: \(String(describing: error))")
-                }
-            }
+            dataModel.fetchData()
         }
         .frame(minWidth: 824,maxWidth: .infinity, minHeight: 330)
             .background(

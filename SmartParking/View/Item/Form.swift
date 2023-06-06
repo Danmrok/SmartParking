@@ -5,9 +5,8 @@
 //  Created by Denys Striltsov on 06.02.2023.
 //
 
-import Foundation
 import SwiftUI
-import Combine
+
 
 
 
@@ -15,18 +14,9 @@ struct Form: View {
     
     @StateObject private var viewmodel = ViewModel()
     
-    
-//    @State private var PhoneNumber : String = ""
-//    @State private var Password : String = ""
     @State private var prompt: String?
     
     @Binding public var Transfer: Bool
-    
-    //    init(prompt: String? = nil) {
-    //
-    //        self.prompt = prompt
-    //    }
-    
     
     
     var body: some View {
@@ -36,7 +26,6 @@ struct Form: View {
             
             VStack(alignment: .leading, spacing: 15){
                 TextField("+380-(66)-333-8711", text: $viewmodel.phonenumber)
-                //                .modifier(PhoneNumberFormatter(text: PhoneNumber))
                     .padding(.horizontal, 20)
                     .textFieldStyle(.plain)
                     .frame(minWidth: 450, maxWidth: 600)
@@ -51,9 +40,6 @@ struct Form: View {
                             viewmodel.phonenumber = viewmodel.phonenumber.formattedMask(text: viewmodel.phonenumber, mask: "+XXX-(XX)-XXX-XXXX")
                         }
                     }
-               
-                    
-                
             }.frame(height: 110)
             
             VStack(alignment: .leading, spacing: 15){
@@ -66,25 +52,25 @@ struct Form: View {
                     .background(Color("White"))
                     .cornerRadius(20)
                     .font(.custom("Rubik-Regular", size: 24))
-                
-
-                
             }.frame(height: 120)
+            
             Button{
                 
-                if viewmodel.canSubmit == false {
+                switch viewmodel.canSubmit {
+                case false:
                     if viewmodel.phonenumber == "380683331812" || viewmodel.password == "Admin2003" {
                         self.Transfer = !Transfer
+                    } else {
+                        print("error")
                     }
+                case true:
+                    print("error")
                 }
-                
-                
                 
             } label: {
                 
                 Text("Log in")
-                
-                
+            
             }.buttonStyle(.plain)
                 .frame(minWidth: 450, maxWidth: 600)
                 .frame(height: 100)
@@ -92,7 +78,6 @@ struct Form: View {
                 .foregroundColor(Color("Green"))
                 .cornerRadius(20)
                 .font(.custom("Rubik-Bold", size: 24))
-            
             
         }.padding(.top, 20)
     }
@@ -103,34 +88,3 @@ struct Form_Previews: PreviewProvider {
         Form(Transfer: .constant(false))
     }
 }
-
-
-//struct PhoneNumberFormatter: ViewModifier {
-//    @Binding var text: String
-//
-//    func body(content: Content) -> some View {
-//        content
-//            .onReceive(Just(text)) { newValue in
-//                let formattedText = formatPhoneNumber(newValue)
-//                self.text = formattedText
-//            }
-//    }
-//
-//    private func formatPhoneNumber(_ text: String) -> String {
-//        let cleanedText = text.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
-//        var formattedText = ""
-//
-//        guard cleanedText.count >= 10 else {
-//            return cleanedText
-//        }
-//
-//        let countryCode = cleanedText.prefix(3)
-//        let firstGroup = cleanedText[cleanedText.index(cleanedText.startIndex, offsetBy: 3)..<cleanedText.index(cleanedText.startIndex, offsetBy: 5)]
-//        let secondGroup = cleanedText[cleanedText.index(cleanedText.startIndex, offsetBy: 5)..<cleanedText.index(cleanedText.startIndex, offsetBy: 8)]
-//        let thirdGroup = cleanedText[cleanedText.index(cleanedText.startIndex, offsetBy: 8)..<cleanedText.endIndex]
-//
-//        formattedText = String(String("+\(countryCode)-(\(firstGroup))-\(secondGroup)-\(thirdGroup)").prefix(18))
-//
-//        return formattedText
-//    }
-//}

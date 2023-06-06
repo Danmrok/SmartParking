@@ -133,12 +133,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F63AC5632A20FAFC003A57AB /* enum */ = {
+		F63AC5632A20FAFC003A57AB /* Enum */ = {
 			isa = PBXGroup;
 			children = (
 				F63AC5642A20FB0E003A57AB /* Regex.swift */,
 			);
-			path = enum;
+			path = Enum;
 			sourceTree = "<group>";
 		};
 		F63AC5662A20FB7B003A57AB /* Extension */ = {
@@ -174,8 +174,8 @@
 			children = (
 				F6E64D8B29901CE900579BD6 /* Info.plist */,
 				F6E64D7C29901AE100579BD6 /* Fonts */,
-				F6C5D4382A059799005CCD99 /* ViewModel */,
 				F6C5D4372A05970D005CCD99 /* Models */,
+				F6C5D4382A059799005CCD99 /* ViewModel */,
 				F6C5D4392A0597A4005CCD99 /* View */,
 				F67B61EF29803B0200EB6943 /* SmartParkingApp.swift */,
 				F67B61F129803B0200EB6943 /* ContentView.swift */,
@@ -247,7 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				F63AC5662A20FB7B003A57AB /* Extension */,
-				F63AC5632A20FAFC003A57AB /* enum */,
+				F63AC5632A20FAFC003A57AB /* Enum */,
 				F6C5D43A2A059862005CCD99 /* ViewModel.swift */,
 			);
 			path = ViewModel;
@@ -257,18 +257,18 @@
 			isa = PBXGroup;
 			children = (
 				F6E64D8E29901F7100579BD6 /* Item */,
-				F6E64D79299015EA00579BD6 /* Authenticator */,
+				F6E64D79299015EA00579BD6 /* Auth */,
 				F6E64D9D2990771400579BD6 /* Main */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		F6E64D79299015EA00579BD6 /* Authenticator */ = {
+		F6E64D79299015EA00579BD6 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
 				F6E64D7A2990161200579BD6 /* Login.swift */,
 			);
-			path = Authenticator;
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		F6E64D7C29901AE100579BD6 /* Fonts */ = {
